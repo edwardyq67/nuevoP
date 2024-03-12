@@ -13,7 +13,7 @@ const Contactame: React.FC = () => {
     const [mensajeEnviado, setMensajeEnviado] = useState<string | null>(null);
 
     const submit: SubmitHandler<FormData> = (data) => {
-        axios.post("http://localhost:5230/emails/contact", data)
+        axios.post("http://soloportafolio-dev-bqsp.3.us-1.fl0.io/emails/contact", data)
             .then(response => {
                 console.log("Email enviado exitosamente:", response.data);
                 setMensajeEnviado("¡Mensaje enviado exitosamente!");

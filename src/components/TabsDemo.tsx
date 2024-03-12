@@ -36,7 +36,7 @@ export function TabsDemo() {
     const [informacionProyecto, setInformacionProyecto] = useState<ProyectoData[]>([]);
 
     useEffect(() => {
-        axios.get<ProyectoData[]>("http://localhost:5230/informacionProyect")
+        axios.get<ProyectoData[]>("http://soloportafolio-dev-bqsp.3.us-1.fl0.io/informacionProyect")
             .then(res =>
                 setInformacionProyecto(res.data)
             );
