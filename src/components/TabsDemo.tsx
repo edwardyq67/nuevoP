@@ -16,7 +16,7 @@ interface ProyectoData {
     imgProyectosFrontEnd: {
         urlFrontEnd: string;
         urlGitHub: string;
-        urlImagen: string;
+        urlImgen: string;
     };
     imgProyectoBackEnd: {
         urlGitHub: string;

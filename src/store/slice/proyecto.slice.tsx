@@ -1,13 +1,20 @@
 import { Action, createSlice, PayloadAction, ThunkAction } from '@reduxjs/toolkit';
-
+ // Suponiendo que tengas definido AppThunk en tu aplicación
 import axios from 'axios';
 import { setIsLoading } from './isLoading.slice';
-import { RootState } from '../index'; 
+import { RootState } from '../ReturnType';
+
+export type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  RootState,
+  unknown,
+  Action<string>
+>;
 interface ConocimientoItem {
     id: number;
     // Otros campos...
 }
-export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, Action<string>>;
+
 type ConocimientoState = ConocimientoItem[];
 
 const initialState: ConocimientoState = [];
