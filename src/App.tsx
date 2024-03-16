@@ -8,7 +8,7 @@ import Inicio from './components/Inicio';
 import Contactame from './components/Contactame';
 import Loading from './components/Loading';
 import { useDispatch, useSelector } from 'react-redux';
-import { getConocimiento } from './store/slice/proyecto.slice';
+
 
 
 
@@ -21,7 +21,7 @@ const App: React.FC = () => {
   };
  const dispatch=useDispatch()
  useEffect(()=>{
-  dispatch(getConocimiento())
+  
  },[dispatch])
   const carga: boolean = useSelector((state: any) => state.isLoading);
   return (
