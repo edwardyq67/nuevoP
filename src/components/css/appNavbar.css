@@ -1,0 +1,120 @@
+.AppNavbar{
+    position: fixed;
+    width: 100%;
+    z-index: 40;
+    top: 0;
+    background-color: rgba(0, 0, 0, .6);
+}
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    
+}
+.container .btn-menu,.logo{
+    float: left;
+    line-height: 70px;
+    
+}
+.logo{
+   
+    margin-top: 10px;
+}
+.container .btn-menu label{
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+}
+.logo h1{
+    color: #fff;
+    font-weight: 400;
+    font-size: 22px;
+    margin-left: 10px;
+}
+.container .menu{
+    float: right;
+    line-height: 70px;
+}
+.container .menu a{
+    display: inline-block;
+    padding: 15px 10px;
+    line-height: normal;
+    text-decoration: none;
+    color: #fff;
+    
+    transition: all .3s ease;
+    font-size: 15px;
+}
+.container .menu a:hover{
+    border-bottom: 2px solid #c7c7c7;
+    padding: 5px 10px;
+}
+#btn-menu{
+    display: none;
+}
+#btn-menu:checked~.container-menu{
+opacity: 1;
+visibility: visible;
+}
+.container-menu{
+    position: fixed;
+    background: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: all .4s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+.cont-menu{
+    width: 100%;
+    max-width: 250px;
+    background: #1c1c1c;
+    height: 100vh;
+    position: relative;
+    transition: all .4s ease;
+}
+.cont-menu nav{
+    transform: translateY(15%);
+}
+.cont-menu nav a{
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: #c7c7c7;
+    border-left: 5px solid transparent;
+    transition: all .3s ease;
+
+}
+.cont-menu nav a:hover{
+    border-left: 5px solid #c7c7c7;
+    background: #1f1f1f;
+}
+.cont-menu label{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+}
+@media (min-width: 768px) {
+    .btn-menu label i{
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+    }
+}
+@media (max-width: 767px) {
+    .menu{
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+    }
+    .logo{
+   
+        margin-top: 20px;
+    }
+    
+}

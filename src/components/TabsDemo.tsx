@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Tabs } from "./ui/tabs";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { getConocimiento } from "../store/slice/proyecto.slice";
 
 interface IconData {
     id: number;
@@ -34,12 +36,13 @@ interface BackEndProps {
 
 export function TabsDemo() {
     const [informacionProyecto, setInformacionProyecto] = useState<ProyectoData[]>([]);
-
+const dispatch=useDispatch()
     useEffect(() => {
         axios.get<ProyectoData[]>("http://soloportafolio-dev-bqsp.3.us-1.fl0.io/informacionProyect")
             .then(res =>
                 setInformacionProyecto(res.data)
             );
+            dispatch(getConocimiento())
     }, []);
 
     const onMouseEn = () => {
@@ -87,9 +90,9 @@ export function TabsDemo() {
     return (
         <div className="pb-4 ">
             {informacionProyecto.map(infoP => (
-                <div key={infoP.id} className="flex flex-col bg-inherit rounded-b-lg items-center gap-4 lg:my-[4em] my-[3em] rounded-xl shadow-md md:flex-row container mx-auto">
+                <div data-aos="fade-down"  key={infoP.id} className="flex flex-col bg-inherit rounded-b-lg items-center gap-4 lg:my-[4em] my-[3em] rounded-xl shadow-md md:flex-row container mx-auto">
 
-                    <div className="flex flex-col justify-between leading-normal">
+                    <div className=" cursor-default flex flex-col justify-between leading-normal">
                         <h5 className="mb-2 text-center text-2xl font-bold tracking-tight text-gray-600 dark:text-gray-400">{infoP.titulo}</h5>
                         <p className="mb-3 font-normal text-gray-500 dark:text-gray-200">{infoP.parrafo}</p>
                         <div className="w-full grid  xl:grid-cols-5 gap-1 my-4 lg:grid-cols-4 grid-cols-3 ">

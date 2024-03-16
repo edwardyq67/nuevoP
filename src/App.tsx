@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import './index.css';
 import './App.css'
 import { InfiniteMovingCardsDemo } from './components/InfiniteMovingCardsDemo';
@@ -6,19 +6,25 @@ import { InfiniteMovingCardsDemo } from './components/InfiniteMovingCardsDemo';
 import { TabsDemo } from './components/TabsDemo';
 import Inicio from './components/Inicio';
 import Contactame from './components/Contactame';
+import Loading from './components/Loading';
+import { useSelector } from 'react-redux';
+
+
+
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [showLoading, setShowLoading] = useState(true);
   const toggleMobileMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
  
-
+  const carga: boolean = useSelector((state: any) => state.isLoading);
   return (
     <div  className=''> 
-    <nav>
-      <ul style={{ position: "fixed", top: "0", zIndex: "9999" }} className={`bg-gray-800 text-slate-900 ${isMenuOpen ? 'grid' : 'hidden'} dark:text-gray-50 font-bold w-[100%] h-12 sm:flex hidden text-xs place-content-around sm:items-center`}>
+    {carga && <Loading />}
+    <nav data-aos="fade-down" >
+      <ul style={{ position: "fixed", top: "0", zIndex: "90" }} className={`bg-gray-800 text-slate-900 ${isMenuOpen ? 'grid' : 'hidden'} dark:text-gray-50 font-bold w-[100%] h-12 sm:flex hidden text-xs place-content-around sm:items-center`}>
         <li>
           <a href="#inicio" className='hover:text-gray-400 transition-all duration-3000'>Inicio</a>
         </li>
@@ -33,7 +39,7 @@ const App: React.FC = () => {
         </li>
       </ul>
    
-        <div style={{ position: "fixed", top: "0", zIndex: "9999" }}>
+        <div style={{ position: "fixed", top: "0", zIndex: "90" }}>
           <i onClick={toggleMobileMenu} className="w-[100vw] container px-4 mx-auto bg-gray-800 text-gray-200 fa-solid fa-bars sm:hidden flex flex-row-reverse text-[1.5em] h-12 items-center"></i>
        
         <ul className={`w-[100%]  bg-gray-900 text-gray-200 ${isMenuOpen ? 'block' : 'hidden'} sm:hidden text-center `}>
@@ -58,21 +64,21 @@ const App: React.FC = () => {
       </section>
        
       <div className='pt-[2em] bg-gradient-to-b from-gray-900 to-gray-700 dark:from-gray-800 dark:to-gray-950 px-4 '>
-    <section id='conocimiento'>
-        <h3 className='pt-[5vh] text-center lg:text-[3em] text-[2em] font-medium text-gray-500 dark:text-gray-400 relative'>
-    Conocimientos 
-    <span className="block absolute inset-x-0 bottom-0 h-[4px] bg-gradient-to-r from-transparent via-gray-400 to-transparent dark:via-gray-400"></span>
+    <section  id='conocimiento'>
+        <h3 data-aos="zoom-in" className='pt-[5vh] text-center lg:text-[3em] text-[2em] font-medium text-gray-500 relative cursor-default '>
+    <label htmlFor="" className='dark:text-gray-700 transition duration-300 hover:text-gray-500'>Conocimientos</label> 
+    <span className="block absolute inset-x-0 bottom-0 h-[4px] bg-gradient-to-r from-transparent via-gray-400 to-transparent dark:via-gray-700"></span>
 </h3>
 
       <InfiniteMovingCardsDemo/>
     </section>
     <section id='proyecto'>
-       <h3 className='pt-[5vh] text-center lg:text-[3em] text-[2em] font-medium text-gray-500 dark:text-gray-400 relative'>
-    Proyectos 
-    <span className="block absolute inset-x-0 bottom-0 h-[4px] bg-gradient-to-r from-transparent via-gray-400 to-transparent dark:via-gray-400"></span>
+       <h3 data-aos="zoom-in" className='pt-[5vh] text-center lg:text-[3em] text-[2em] font-medium text-gray-500  relative  cursor-default '>
+    <label htmlFor="" className='dark:text-gray-700 transition duration-300 hover:text-gray-500'>Proyectos</label>  
+    <span className="block absolute inset-x-0 bottom-0 h-[4px] bg-gradient-to-r from-transparent via-gray-400 to-transparent dark:via-gray-700"></span>
 </h3>   <TabsDemo/>
     </section>
-      <section id='contacto'>
+      <section data-aos="zoom-in" id='contacto'>
         <Contactame/>
       </section>
      
