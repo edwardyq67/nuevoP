@@ -7,18 +7,21 @@ const Contactame: React.FC = () => {
     
     const [mensajeEnviado, setMensajeEnviado] = useState<string | null>(null);
     const refForm = useRef<HTMLFormElement>(null);
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => { // Recibe el evento del formulario
+    const ref=refForm.current
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => { 
         event.preventDefault();
         const serviceId = "service_0j5p4is";
         const templateId = "template_c2csmmu";
         const apikey = "FiOIebaYfaTGEnXXt";
-
-        emailjs.sendForm(serviceId, templateId, refForm.current, apikey)
-            .then((result) => {
-                console.log(result.text);
-                setMensajeEnviado("Mensaje enviado exitosamente"); // Actualiza el estado después de enviar el formulario
-            })
-            .catch(error => console.log(error.message));
+    
+        if (ref) {
+            emailjs.sendForm(serviceId, templateId, ref, apikey)
+                .then((result) => {
+                    console.log(result.text);
+                    setMensajeEnviado("Mensaje enviado exitosamente"); 
+                })
+                .catch(error => console.log(error.message));
+        }
     }
     return (
         <div>

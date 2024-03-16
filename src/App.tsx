@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import './index.css';
 import './App.css'
 import { InfiniteMovingCardsDemo } from './components/InfiniteMovingCardsDemo';

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Tabs } from "./ui/tabs";
-import axios from "axios";
-import { useDispatch } from "react-redux";
+
 import { getConocimiento } from "../store/slice/proyecto.slice";
+import axios from "axios";
 
 interface IconData {
     id: number;
@@ -36,13 +36,14 @@ interface BackEndProps {
 
 export function TabsDemo() {
     const [informacionProyecto, setInformacionProyecto] = useState<ProyectoData[]>([]);
-const dispatch=useDispatch()
+
+
     useEffect(() => {
         axios.get<ProyectoData[]>("http://soloportafolio-dev-bqsp.3.us-1.fl0.io/informacionProyect")
             .then(res =>
                 setInformacionProyecto(res.data)
             );
-      dispatch(getConocimiento()); 
+      (getConocimiento()); 
     }, []);
 
     const onMouseEn = () => {
