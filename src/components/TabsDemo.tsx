@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Tabs } from "./ui/tabs";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+
 
 
 interface IconData {
@@ -36,7 +36,7 @@ interface BackEndProps {
 
 const TabsDemo: React.FC = () => {
     const [informacionProyecto, setInformacionProyecto] = useState<ProyectoData[]>([]);
-    const dispatch = useDispatch(); // Obtener la función de despacho
+// Obtener la función de despacho
   
     useEffect(() => {
       // Llamar a getConocimiento cuando el componente se monta
@@ -46,7 +46,7 @@ const TabsDemo: React.FC = () => {
       axios.get<ProyectoData[]>("http://soloportafolio-dev-bqsp.3.us-1.fl0.io/informacionProyect")
         .then(res => setInformacionProyecto(res.data))
         .catch(error => console.error('Error fetching project information:', error));
-    }, [dispatch]);
+    }, []);
     const onMouseEn = () => {
         const imgM = document.getElementById('imgM');
         if (imgM) {
