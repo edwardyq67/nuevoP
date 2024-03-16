@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Tabs } from "./ui/tabs";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { getConocimiento } from "../store/slice/proyecto.slice";
+
 
 interface IconData {
     id: number;
@@ -34,17 +34,19 @@ interface BackEndProps {
     urlGithubB: string;
 }
 
-export function TabsDemo() {
+const TabsDemo: React.FC = () => {
     const [informacionProyecto, setInformacionProyecto] = useState<ProyectoData[]>([]);
-const dispatch=useDispatch()
+    const dispatch = useDispatch(); // Obtener la función de despacho
+  
     useEffect(() => {
-        axios.get<ProyectoData[]>("http://soloportafolio-dev-bqsp.3.us-1.fl0.io/informacionProyect")
-            .then(res =>
-                setInformacionProyecto(res.data)
-            );
-      dispatch(getConocimiento()); 
-    }, []);
-
+      // Llamar a getConocimiento cuando el componente se monta
+    
+      
+      // Obtener información de proyecto
+      axios.get<ProyectoData[]>("http://soloportafolio-dev-bqsp.3.us-1.fl0.io/informacionProyect")
+        .then(res => setInformacionProyecto(res.data))
+        .catch(error => console.error('Error fetching project information:', error));
+    }, [dispatch]);
     const onMouseEn = () => {
         const imgM = document.getElementById('imgM');
         if (imgM) {
@@ -133,3 +135,4 @@ const BackEnd = ({ urlGithubB }: BackEndProps) => {
 
     );
 }
+export default TabsDemo;

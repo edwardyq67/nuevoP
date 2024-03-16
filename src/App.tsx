@@ -1,13 +1,14 @@
-import React, {useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import './index.css';
 import './App.css'
 import { InfiniteMovingCardsDemo } from './components/InfiniteMovingCardsDemo';
 
-import { TabsDemo } from './components/TabsDemo';
+import  TabsDemo  from './components/TabsDemo';
 import Inicio from './components/Inicio';
 import Contactame from './components/Contactame';
 import Loading from './components/Loading';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getConocimiento } from './store/slice/proyecto.slice';
 
 
 
@@ -18,7 +19,10 @@ const App: React.FC = () => {
   const toggleMobileMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
- 
+ const dispatch=useDispatch()
+ useEffect(()=>{
+  dispatch(getConocimiento())
+ },[dispatch])
   const carga: boolean = useSelector((state: any) => state.isLoading);
   return (
     <div  className=''> 
