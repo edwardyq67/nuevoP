@@ -22,7 +22,7 @@ export const conocimientoSlice = createSlice({
     }
 });
 
-export const getConocimiento = (): AppThunk => async (dispatch) => {
+export const getConocimiento = ()  => async (dispatch) => {
     dispatch(setIsLoading(true));
 
     try {
