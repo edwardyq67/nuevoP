@@ -1,13 +1,13 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Action, createSlice, PayloadAction, ThunkAction } from '@reduxjs/toolkit';
 
 import axios from 'axios';
 import { setIsLoading } from './isLoading.slice';
-
+import { RootState } from '../index'; 
 interface ConocimientoItem {
     id: number;
     // Otros campos...
 }
-
+export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, Action<string>>;
 type ConocimientoState = ConocimientoItem[];
 
 const initialState: ConocimientoState = [];
@@ -22,7 +22,7 @@ export const conocimientoSlice = createSlice({
     }
 });
 
-export const getConocimiento = ()  => async (dispatch) => {
+export const getConocimiento = (): AppThunk => async (dispatch) => {
     dispatch(setIsLoading(true));
 
     try {
