@@ -14,7 +14,7 @@ import { useSelector } from 'react-redux';
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showLoading, setShowLoading] = useState(true);
+
   const toggleMobileMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };

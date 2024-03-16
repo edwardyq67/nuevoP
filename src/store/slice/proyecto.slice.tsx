@@ -24,7 +24,7 @@ export const conocimientoSlice = createSlice({
     initialState,
     reducers: {
         setConocimiento: (state, action: PayloadAction<ConocimientoState>) => {
-            return action.payload;
+            state.splice(0, state.length, ...action.payload);
         }
     }
 });

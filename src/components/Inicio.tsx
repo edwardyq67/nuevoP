@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import yo from "../Imagen/deportiva.plomo-removebg-preview.png";
 import "../App.css"
 const Inicio = () => {

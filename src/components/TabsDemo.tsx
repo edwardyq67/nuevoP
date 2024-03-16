@@ -42,7 +42,7 @@ const dispatch=useDispatch()
             .then(res =>
                 setInformacionProyecto(res.data)
             );
-            dispatch(getConocimiento())
+      dispatch(getConocimiento()); 
     }, []);
 
     const onMouseEn = () => {
