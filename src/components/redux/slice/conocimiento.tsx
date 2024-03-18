@@ -16,22 +16,22 @@ const initialState: CounterState = {
     error:""
 };
 
-// Define an asynchronous thunk action
+
 export const getConocimiento = createAsyncThunk('getConocimiento', async (_, { dispatch }) => {
   try {
-    dispatch(setIsLoading(false)); // Establecer isLoading en true antes de la solicitud
+    dispatch(setIsLoading(false)); 
     const response = await axios.get("https://soloportafolio-dev-bqsp.3.us-1.fl0.io/informacionProyect");
-    dispatch(setIsLoading(true)); // Establecer isLoading en false después de la solicitud exitosa
-    return response.data; // Retornar los datos recibidos
+    dispatch(setIsLoading(true)); 
+    return response.data;
   } catch (error) {
-    dispatch(setIsLoading(false)); // Establecer isLoading en false en caso de error
-    throw error; // Lanzar error en caso de fallo
+    dispatch(setIsLoading(false));
+    throw error; 
   }
 });
 
 export const conocimientoSlice = createSlice({
   name: 'conocimiento',
-  // `createSlice` infiere el tipo del estado a partir del argumento `initialState`
+ 
   initialState,
   reducers: {
     extraReducer() {
@@ -39,7 +39,7 @@ export const conocimientoSlice = createSlice({
     }
   },
   extraReducers: (builder) => {
-    // Aquí puedes agregar reductores adicionales para manejar acciones creadas por `createAsyncThunk`
+    
     builder.addCase(getConocimiento.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;

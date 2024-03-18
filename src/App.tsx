@@ -24,10 +24,10 @@ useEffect(()=>{
 },[])
   
   return (
-    <div  className=''> 
+    <div  className='relative' > 
     {carga.loading && <Loading />}
-    <nav data-aos="fade-down" >
-      <ul style={{ position: "fixed", top: "0", zIndex: "90" }} className={`bg-gray-800 text-slate-900 ${isMenuOpen ? 'grid' : 'hidden'} dark:text-gray-50 font-bold w-[100%] h-12 sm:flex hidden text-xs place-content-around sm:items-center`}>
+    <nav data-aos="fade-down" className='fixed w-[100%]'  style={{zIndex:"9999"}} >
+      <ul  className={`bg-gray-800 text-slate-900 ${isMenuOpen ? 'grid' : 'hidden'} dark:text-gray-50 font-bold w-[100%] h-12 sm:flex hidden text-xs place-content-around sm:items-center`}>
         <li>
           <a href="#inicio" className='hover:text-gray-400 transition-all duration-3000'>Inicio</a>
         </li>
@@ -42,10 +42,10 @@ useEffect(()=>{
         </li>
       </ul>
    
-        <div style={{ position: "fixed", top: "0", zIndex: "90" }}>
+        <div>
           <i onClick={toggleMobileMenu} className="w-[100vw] container px-4 mx-auto bg-gray-800 text-gray-200 fa-solid fa-bars sm:hidden flex flex-row-reverse text-[1.5em] h-12 items-center"></i>
        
-        <ul className={`w-[100%]  bg-gray-900 text-gray-200 ${isMenuOpen ? 'block' : 'hidden'} sm:hidden text-center `}>
+        <ul  className={`fixed w-[100%]  bg-gray-900 text-gray-200 ${isMenuOpen ? 'block' : 'hidden'} sm:hidden text-center `}>
           <li className='h-[3vh] flex items-center justify-center'>
             <a href="#inicio" className='pt-1 hover:text-gray-400 '>Inicio</a>
           </li>

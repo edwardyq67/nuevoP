@@ -2,15 +2,14 @@ import { useEffect, useState } from 'react';
 import yo from "../Imagen/deportiva.plomo-removebg-preview.png";
 import "../App.css"
 const Inicio = () => {
-  const [color, setColor] = useState('#1f2937'); // Estado inicial del color
+  const [color, setColor] = useState('#1f2937'); 
 
   useEffect(() => {
-    // Después de 1 segundo, cambia el color a 'aqua'
+   
     const timeout = setTimeout(() => {
       setColor('#111927');
     }, 1000);
 
-    // Limpia el temporizador
     return () => clearTimeout(timeout);
   }, []);
   return (
