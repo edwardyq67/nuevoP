@@ -1,30 +1,29 @@
-import React, { useState } from 'react';
+import  { useEffect, useState } from 'react';
 import './index.css';
 import './App.css'
 import { InfiniteMovingCardsDemo } from './components/InfiniteMovingCardsDemo';
-
-import  TabsDemo  from './components/TabsDemo';
 import Inicio from './components/Inicio';
+import TabsDemo from './components/TabsDemo';
 import Contactame from './components/Contactame';
-import Loading from './components/Loading';
-import { useSelector } from 'react-redux';
 
 
 
 
 
-const App: React.FC = () => {
+function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+useEffect(()=>{
 
-  const carga: boolean = useSelector((state: any) => state.isLoading);
+},[])
+  
   return (
     <div  className=''> 
-    {carga && <Loading />}
+    {/* {carga && <Loading />} */}
     <nav data-aos="fade-down" >
       <ul style={{ position: "fixed", top: "0", zIndex: "90" }} className={`bg-gray-800 text-slate-900 ${isMenuOpen ? 'grid' : 'hidden'} dark:text-gray-50 font-bold w-[100%] h-12 sm:flex hidden text-xs place-content-around sm:items-center`}>
         <li>

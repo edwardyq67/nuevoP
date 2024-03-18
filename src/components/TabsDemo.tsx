@@ -1,29 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Tabs } from "./ui/tabs";
-import axios from "axios";
+
+import { useAppDispatch, useAppSelector } from "./redux/hooks";
+import { getConocimiento } from "./redux/slice/conocimiento";
 
 
 
-interface IconData {
-    id: number;
-    url: string;
-}
-
-interface ProyectoData {
-    id: number;
-    titulo: string;
-    parrafo: string;
-    imgProyectosFrontEnd: {
-        urlFrontEnd: string;
-        urlGitHub: string;
-        urlImgen: string;
-    };
-    imgProyectoBackEnd: {
-        urlGitHub: string;
-        urlImagen: string;
-    };
-    lenguajes: IconData[];
-}
 
 interface FrontEndProps {
     urlWeb: string;
@@ -35,17 +17,12 @@ interface BackEndProps {
 }
 
 const TabsDemo: React.FC = () => {
-    const [informacionProyecto, setInformacionProyecto] = useState<ProyectoData[]>([]);
-// Obtener la función de despacho
   
+const count = useAppSelector(state => state.conocimiento)
+const dispatch = useAppDispatch()
     useEffect(() => {
-      // Llamar a getConocimiento cuando el componente se monta
-    
-      
-      // Obtener información de proyecto
-      axios.get<ProyectoData[]>("http://soloportafolio-dev-bqsp.3.us-1.fl0.io/informacionProyect")
-        .then(res => setInformacionProyecto(res.data))
-        .catch(error => console.error('Error fetching project information:', error));
+        dispatch(getConocimiento())
+       
     }, []);
     const onMouseEn = () => {
         const imgM = document.getElementById('imgM');
@@ -91,15 +68,15 @@ const TabsDemo: React.FC = () => {
 
     return (
         <div className="pb-4 ">
-            {informacionProyecto.map(infoP => (
+            {count.data.map(infoP => (
                 <div data-aos="fade-down"  key={infoP.id} className="flex flex-col bg-inherit rounded-b-lg items-center gap-4 lg:my-[4em] my-[3em] rounded-xl shadow-md md:flex-row container mx-auto">
 
                     <div className=" cursor-default flex flex-col justify-between leading-normal">
                         <h5 className="mb-2 text-center text-2xl font-bold tracking-tight text-gray-600 dark:text-gray-400">{infoP.titulo}</h5>
                         <p className="mb-3 font-normal text-gray-500 dark:text-gray-200">{infoP.parrafo}</p>
                         <div className="w-full grid  xl:grid-cols-5 gap-1 my-4 lg:grid-cols-4 grid-cols-3 ">
-                            {infoP.lenguajes.map(iconL => (
-                                <img key={iconL.id} className="w-[3em]  mx-auto mb-4" src={iconL.url} alt="" />
+                            {infoP.lenguajes.map(iconLeng => (
+                                <img key={iconLeng.id} className="w-[3em]  mx-auto mb-4" src={iconLeng.url} alt="" />
                             ))}
                         </div>
                     </div>
