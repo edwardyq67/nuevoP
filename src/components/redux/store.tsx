@@ -1,10 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import conocimiento from './slice/conocimiento';
+import isLoading from './slice/isLoading';
+
 // ...
 
 const store = configureStore({
   reducer: {
-    conocimiento:conocimiento
+    conocimiento:conocimiento,
+    isLoading:isLoading,
   }
 })
 

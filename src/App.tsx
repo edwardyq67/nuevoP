@@ -5,6 +5,8 @@ import { InfiniteMovingCardsDemo } from './components/InfiniteMovingCardsDemo';
 import Inicio from './components/Inicio';
 import TabsDemo from './components/TabsDemo';
 import Contactame from './components/Contactame';
+import { useAppSelector } from './components/redux/hooks';
+import Loading from './components/Loading';
 
 
 
@@ -16,14 +18,14 @@ function App() {
   const toggleMobileMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
+  const carga = useAppSelector(state => state.conocimiento)
 useEffect(()=>{
 
 },[])
   
   return (
     <div  className=''> 
-    {/* {carga && <Loading />} */}
+    {!carga && <Loading />}
     <nav data-aos="fade-down" >
       <ul style={{ position: "fixed", top: "0", zIndex: "90" }} className={`bg-gray-800 text-slate-900 ${isMenuOpen ? 'grid' : 'hidden'} dark:text-gray-50 font-bold w-[100%] h-12 sm:flex hidden text-xs place-content-around sm:items-center`}>
         <li>

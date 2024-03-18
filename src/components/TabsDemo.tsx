@@ -75,8 +75,8 @@ const dispatch = useAppDispatch()
                         <h5 className="mb-2 text-center text-2xl font-bold tracking-tight text-gray-600 dark:text-gray-400">{infoP.titulo}</h5>
                         <p className="mb-3 font-normal text-gray-500 dark:text-gray-200">{infoP.parrafo}</p>
                         <div className="w-full grid  xl:grid-cols-5 gap-1 my-4 lg:grid-cols-4 grid-cols-3 ">
-                            {infoP.lenguajes.map(iconLeng => (
-                                <img key={iconLeng.id} className="w-[3em]  mx-auto mb-4" src={iconLeng.url} alt="" />
+                        {infoP.lenguajes.map((iconLeng: any) => (
+                            <img key={iconLeng.id} className="w-[3em]  mx-auto mb-4" src={iconLeng.url} alt="" />
                             ))}
                         </div>
                     </div>

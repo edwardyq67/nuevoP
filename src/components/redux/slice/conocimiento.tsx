@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { setIsLoading } from './isLoading';
 
 // Define a type for the slice state
 export interface CounterState {
@@ -16,13 +17,16 @@ const initialState: CounterState = {
 };
 
 // Define an asynchronous thunk action
-export const getConocimiento = createAsyncThunk('getConocimiento', async () => {
-    try {
-        const response = await axios.get("http://soloportafolio-dev-bqsp.3.us-1.fl0.io/informacionProyect");
-        return response.data; // Retornar los datos recibidos
-    } catch (error) {
-        throw error; // Lanzar error en caso de fallo
-    }
+export const getConocimiento = createAsyncThunk('getConocimiento', async (_, { dispatch }) => {
+  try {
+    dispatch(setIsLoading(false)); // Establecer isLoading en true antes de la solicitud
+    const response = await axios.get("http://soloportafolio-dev-bqsp.3.us-1.fl0.io/informacionProyect");
+    dispatch(setIsLoading(true)); // Establecer isLoading en false después de la solicitud exitosa
+    return response.data; // Retornar los datos recibidos
+  } catch (error) {
+    dispatch(setIsLoading(false)); // Establecer isLoading en false en caso de error
+    throw error; // Lanzar error en caso de fallo
+  }
 });
 
 export const conocimientoSlice = createSlice({
@@ -30,8 +34,8 @@ export const conocimientoSlice = createSlice({
   // `createSlice` infiere el tipo del estado a partir del argumento `initialState`
   initialState,
   reducers: {
-    extraReducer(state, action) {
-      // Aquí va la lógica del reductor adicional
+    extraReducer() {
+      
     }
   },
   extraReducers: (builder) => {
