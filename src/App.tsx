@@ -26,7 +26,7 @@ useEffect(()=>{
   return (
     <div  className='relative' > 
     {carga.loading && <Loading />}
-    <nav data-aos="fade-down" className='fixed w-[100%]'  style={{zIndex:"9999"}} >
+    <nav data-aos="fade-down" className='fixed w-[100%] '  style={{zIndex:"99"}} >
       <ul  className={`bg-gray-800 text-slate-900 ${isMenuOpen ? 'grid' : 'hidden'} dark:text-gray-50 font-bold w-[100%] h-12 sm:flex hidden text-xs place-content-around sm:items-center`}>
         <li>
           <a href="#inicio" className='hover:text-gray-400 transition-all duration-3000'>Inicio</a>

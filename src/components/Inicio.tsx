@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import yo from "../Imagen/deportiva.plomo-removebg-preview.png";
+import yo from "../Imagen/edward.png";
 import "../App.css"
 const Inicio = () => {
   const [color, setColor] = useState('#1f2937'); 
