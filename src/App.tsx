@@ -8,10 +8,6 @@ import Contactame from './components/Contactame';
 import { useAppSelector } from './components/redux/hooks';
 import Loading from './components/Loading';
 
-
-
-
-
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
