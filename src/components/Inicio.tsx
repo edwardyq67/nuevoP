@@ -14,7 +14,7 @@ const Inicio = () => {
   }, []);
   return (
     <div className='fondoInicio mx-auto pt-[5em]  h-[80vh] flex items-center justify-center'>
-      <div className="grid grid-cols-4 gap-4 flex container mx-auto px-4">
+      <div className="grid grid-cols-4 gap-4 container mx-auto px-4">
         <div data-aos="fade-right" className=" cursor-default flex flex-col justify-center lg:items-start items-center lg:col-span-3 leading-normal col-span-4">
           <h5 className=' mb-2 text-2xl font-bold tracking-tight text-gray-400 dark:text-gray-500 text-center'>DESARROLLADOR <label style={{whiteSpace: 'nowrap'}} htmlFor="">FRONT-END</label></h5>
           <p className='xl:w-[55vw] lg:w-[50vw] lg:text-start text-center mb-3 font-normal text-gray-200 dark:text-gray-300 '>

@@ -20,7 +20,7 @@ const initialState: CounterState = {
 export const getConocimiento = createAsyncThunk('getConocimiento', async (_, { dispatch }) => {
   try {
     dispatch(setIsLoading(false)); 
-    const response = await axios.get("https://soloportafolio-dev-bqsp.3.us-1.fl0.io/informacionProyect");
+    const response = await axios.get("https://soloportafolio-dev-rdkg.3.us-1.fl0.io/informacionProyect");
     dispatch(setIsLoading(true)); 
     return response.data;
   } catch (error) {
