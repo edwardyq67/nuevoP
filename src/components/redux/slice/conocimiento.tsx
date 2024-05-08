@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import axios from 'axios';
+
 import { setIsLoading } from './isLoading';
 
 // Define a type for the slice state
@@ -25,7 +25,7 @@ export const getConocimiento = createAsyncThunk('getConocimiento', async (_, { d
       // Importa el archivo JSON
       const response = await import("../../../../json.json");
       dispatch(setIsLoading(true)); 
-      return response.data;
+      return response;
   } catch (error) {
       dispatch(setIsLoading(false));
       throw error; 

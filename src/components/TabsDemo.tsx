@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Tabs } from "./ui/tabs";
 
-import { useAppDispatch, useAppSelector } from "./redux/hooks";
+import { useAppDispatch } from "./redux/hooks";
 import { getConocimiento } from "./redux/slice/conocimiento";
 import datos from '../../json.json'
 
@@ -18,7 +18,7 @@ interface BackEndProps {
 
 const TabsDemo: React.FC = () => {
   
-const count = useAppSelector(state => state.conocimiento)
+
 
 const dispatch = useAppDispatch()
     useEffect(() => {
