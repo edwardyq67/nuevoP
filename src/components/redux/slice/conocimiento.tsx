@@ -19,13 +19,16 @@ const initialState: CounterState = {
 
 export const getConocimiento = createAsyncThunk('getConocimiento', async (_, { dispatch }) => {
   try {
-    dispatch(setIsLoading(false)); 
-    const response = await axios.get("https://soloportafolio.onrender.com/informacionProyect");
-    dispatch(setIsLoading(true)); 
-    return response.data;
+      dispatch(setIsLoading(false)); 
+      // Simula un retraso de 0.5 segundos
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Importa el archivo JSON
+      const response = await import("../../../../json.json");
+      dispatch(setIsLoading(true)); 
+      return response.data;
   } catch (error) {
-    dispatch(setIsLoading(false));
-    throw error; 
+      dispatch(setIsLoading(false));
+      throw error; 
   }
 });
 

@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "titulo": "E-Comer",
+    "parrafo": "He creado un ejemplo de e-commerce centrado en el desarrollo del front-end. Este proyecto encapsula mi habilidad para diseñar interfaces atractivas y funcionales que cautivan a los usuarios desde el primer clic.",
+
+    "lenguajes": [
+      {
+        "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain-wordmark.svg"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain-wordmark.svg"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg"
+      }
+    ],
+    "imgProyectosFrontEnd": {
+      "id": 1,
+      "titulo": "E-Comer",
+      "urlImgen": "https://res.cloudinary.com/dcwdddwnh/image/upload/v1714713085/images_app/e-comer.jpg",
+      "urlFrontEnd": "https://main--vermillion-monstera-a732df.netlify.app/",
+      "urlGitHub": "https://github.com/edwardyq67/e-comer.git"
+    },
+    "imgProyectoBackEnd": {
+      "id": 1,
+      "titulo": "E-Comer",
+      "urlImagen": "http://res.cloudinary.com/dcwdddwnh/image/upload/v1714591589/images_app/Captura.jpg",
+      "urlGitHub": "https://github.com/keikaavousi/fake-store-api.git"
+    }
+  }
+]

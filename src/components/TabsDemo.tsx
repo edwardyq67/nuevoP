@@ -3,7 +3,7 @@ import { Tabs } from "./ui/tabs";
 
 import { useAppDispatch, useAppSelector } from "./redux/hooks";
 import { getConocimiento } from "./redux/slice/conocimiento";
-
+import datos from '../../json.json'
 
 
 
@@ -19,6 +19,7 @@ interface BackEndProps {
 const TabsDemo: React.FC = () => {
   
 const count = useAppSelector(state => state.conocimiento)
+
 const dispatch = useAppDispatch()
     useEffect(() => {
         dispatch(getConocimiento())
@@ -68,7 +69,7 @@ const dispatch = useAppDispatch()
 
     return (
         <div className="pb-4 ">
-            {count.data.map(infoP => (
+            {datos.map(infoP => (
                 <div data-aos="fade-down"  key={infoP.id} className="flex flex-col bg-inherit rounded-b-lg items-center gap-4 lg:my-[4em] my-[3em] rounded-xl shadow-md md:flex-row container mx-auto">
 
                     <div className=" cursor-default flex flex-col justify-between leading-normal">
@@ -92,7 +93,7 @@ const dispatch = useAppDispatch()
 
 const FrontEnd = ({ urlWeb, urlGithubF }: FrontEndProps) => {
     return (
-        <div className="flex rounded-lg justify-center items-center h-full justify-evenly transition duration-300 bg-[rgba(0,0,0,0.3)]">
+        <div className="flex rounded-lg  items-center h-full justify-evenly transition duration-300 bg-[rgba(0,0,0,0.3)]">
 
             <a href={urlWeb} target="_blank"> <i className="hover:text-[white] text-zinc-400 transition-all  text-[1.5em] fa-solid fa-eye"></i></a>
             <a href={urlGithubF} target="_blank"><i className="hover:text-[white] text-zinc-400 transition-all  text-[1.5em] fa-brands fa-github"></i></a>
@@ -104,7 +105,7 @@ const FrontEnd = ({ urlWeb, urlGithubF }: FrontEndProps) => {
 const BackEnd = ({ urlGithubB }: BackEndProps) => {
 
     return (
-        <div className="flex rounded-lg  justify-center items-center h-full justify-evenly transition duration-300 bg-[rgba(0,0,0,0.3)]">
+        <div className="flex rounded-lg  items-center h-full justify-evenly transition duration-300 bg-[rgba(0,0,0,0.3)]">
 
             <a href={urlGithubB} target="_blank"><i className="hover:text-[white] text-zinc-400 transition-all  text-[1.5em] fa-brands fa-github"></i></a>
         </div>
