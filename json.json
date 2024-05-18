@@ -37,5 +37,49 @@
       "urlImagen": "http://res.cloudinary.com/dcwdddwnh/image/upload/v1714591589/images_app/Captura.jpg",
       "urlGitHub": "https://github.com/keikaavousi/fake-store-api.git"
     }
-  }
+  },
+ 
+  {
+    "id": 2,
+    "titulo": "Clima",
+    "parrafo": "He creado una web utilizando una API de clima que proporciona información sobre la temperatura, humedad y precipitación. La web incluye gráficos que hacen más entendible estos datos y ofrece pronósticos del clima para hoy y los próximos ocho días.",
+  
+    "lenguajes": [
+        {
+           
+            "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain-wordmark.svg"
+            
+        },
+        {
+           
+            "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain-wordmark.svg"
+        },
+        {
+            
+            "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg"
+        },
+        {
+        
+            "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg"
+        },
+        {
+            
+            "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+        }
+    ],
+    "imgProyectosFrontEnd": {
+        "id": 1,
+        "titulo": "FRONT-END",
+        "urlImgen": "http://res.cloudinary.com/dcwdddwnh/image/upload/v1715972050/images_app/clima.jpg",
+        "urlFrontEnd": "https://peaceful-faun-c8c0bb.netlify.app/",
+        "urlGitHub": "https://github.com/edwardyq67/climaT.git"
+    },
+    "imgProyectoBackEnd": {
+        "id": 1,
+        "titulo": "BACK-END",
+        "urlImagen": "http://res.cloudinary.com/dcwdddwnh/image/upload/v1715972106/images_app/climaApi.jpg",
+        "urlGitHub": "https://github.com/edwardyq67/climaT.git"
+
+    }
+}
 ]
